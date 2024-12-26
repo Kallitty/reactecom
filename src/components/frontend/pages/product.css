@@ -1,0 +1,39 @@
+.product-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-main {
+  flex: 3; /* Main content takes up 3 parts of the space */
+}
+
+.product-related {
+  flex: 1; /* Related products take up 1 part of the space */
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@media (max-width: 1024px) {
+  .product-layout {
+    flex-direction: column; /* Stack the layout vertically */
+    gap: 30px;
+  }
+
+  .product-main {
+    flex: none; /* Allow full-width for main content */
+  }
+
+  .product-related {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Responsive grid for 3 items per row */
+    gap: 20px;
+  }
+}

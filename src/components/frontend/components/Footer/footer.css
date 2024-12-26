@@ -1,0 +1,134 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px; /* Add padding for spacing */
+  background-color: #f9f9f9; /* Subtle background color */
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  width: 60px; /* Set a fixed width for consistency */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer-logo p {
+  color: #383838;
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  color: #252525;
+  font-size: 20px;
+}
+
+.footer-links li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #ff4081; /* Highlight on hover */
+}
+
+.footer-social-icon {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icon-container {
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 50%; /* Circular icons */
+  background: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-icon-container:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  background-color: #ff4081;
+}
+
+.footer-icon-container img {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  font-size: 16px; /* Slightly smaller font for readability */
+  text-align: center;
+}
+
+.footer-copyright hr {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  height: 3px;
+  background: #c7c7c7;
+}
+
+@media (max-width: 1024px) {
+  .footer-logo p {
+    font-size: 36px; /* Scale down logo text */
+  }
+
+  .footer-links {
+    gap: 30px; /* Reduce space between links */
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .footer-icon-container img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    gap: 30px; /* Reduce overall gap */
+  }
+
+  .footer-logo p {
+    font-size: 28px; /* Further scale down logo text */
+  }
+
+  .footer-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px;
+    text-align: center; /* Center-align links */
+  }
+
+  .footer-icon-container {
+    padding: 8px; /* Adjust padding */
+  }
+
+  .footer-icon-container img {
+    width: 18px;
+    height: 18px; /* Smaller icons */
+  }
+
+  .footer-copyright p {
+    font-size: 14px; /* Smaller copyright text */
+  }
+}

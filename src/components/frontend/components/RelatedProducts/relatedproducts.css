@@ -1,0 +1,65 @@
+.RelatedProducts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RelatedProducts h3 {
+  color: #171717;
+  font-size: 1.5rem;
+  text-align: center; /* Center the heading */
+}
+
+.RelatedProducts hr {
+  width: 200px;
+  height: 6px;
+  border-radius: 10px;
+  background: #252525;
+  margin: 10px 0;
+}
+
+.relatedProducts-item {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+  justify-content: center; /* Center items horizontally */
+  /* gap: 20px; */
+}
+
+@media (max-width: 1024px) {
+  .RelatedProducts {
+    align-items: center; /* Align content to the left for spacing */
+  }
+
+  .RelatedProducts h3 {
+    text-align: center;
+    width: 100%; /* Ensure the heading spans the container */
+    margin-bottom: 10px;
+  }
+
+  .relatedProducts-item {
+    flex-direction: row; /* Horizontal alignment */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .relatedProducts-item::-webkit-scrollbar {
+    height: 8px; /* Custom scrollbar height */
+  }
+
+  .relatedProducts-item::-webkit-scrollbar-thumb {
+    background: #252525; /* Dark scrollbar thumb */
+    border-radius: 10px;
+  }
+
+  .relatedProducts-item::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Light scrollbar track */
+  }
+}
+
+@media (max-width: 768px) {
+  .relatedProducts-item {
+    gap: 5px; /* Reduce gap for smaller screens */
+    padding: 5px;
+  }
+}

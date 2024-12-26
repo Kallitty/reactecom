@@ -1,0 +1,348 @@
+.productDisplay {
+  display: flex;
+  margin: 0 20px;
+}
+
+.productdisplay-left {
+  display: flex;
+  gap: 18px;
+}
+
+.productdisplay-img-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productdisplay-img-list img {
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.productdisplay-img-list img:hover {
+  transform: scale(1.05);
+}
+
+.productdisplay-main-img {
+  width: 386px;
+  height: 450px;
+  object-fit: cover;
+  border: 2px solid #ff69b4; /* Pink border */
+  border-radius: 5px;
+}
+
+.productdisplay-right {
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productdisplay-right h1 {
+  color: #3d3d3d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.productdisplay-right-stars {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  color: #1c1c1c;
+  font-size: 14px;
+}
+
+.productdisplay-right-stars img {
+  margin-right: 4px;
+}
+
+.productdisplay-right-prices {
+  display: flex;
+  margin: 10px 0;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.productdisplay-right-price-old {
+  color: #818181;
+  text-decoration: line-through;
+}
+
+.productdisplay-right-price-new {
+  color: #ff4141;
+}
+
+.productdisplay-right-description {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #4f4f4f;
+}
+
+.productdisplay-right-size h1 {
+  margin-top: 20px;
+  color: #656565;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.productdisplay-right-sizes {
+  display: flex;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.productdisplay-right-sizes div {
+  padding: 10px 16px;
+  background: #c7c6c6;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.productdisplay-right-sizes div:hover {
+  background: #b3b3b3;
+}
+
+.button-green {
+  background-color: #28a745;
+  color: #fff;
+  /* padding: 10px 20px; */
+  font-size: 14px;
+  /* font-weight: 600; */
+  border-radius: 10px;
+  border: none;
+}
+
+.button-pink {
+  background-color: #ff69b4; /* Pink for 'Add to Cart' */
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+
+.button-pink:hover {
+  background-color: #ff4081;
+}
+
+.button-wishlist {
+  background-color: #ff4141; /* Adjusted pink for wishlist */
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 15px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.button-wishlist:hover {
+  background-color: #e1356b;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.quantity-controls button {
+  background-color: #ff69b4;
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background-color: #ff4081;
+}
+
+.quantity-display {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  width: 40px;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+/* General styles remain unchanged */
+
+/* Tablet-specific styles */
+@media (max-width: 1028px) {
+  .productDisplay {
+    display: flex;
+    flex-direction: row; /* Keep left and right side by side */
+    margin: 0 10px;
+  }
+
+  .productdisplay-left {
+    display: flex;
+    gap: 12px; /* Reduce gap */
+    flex: 1; /* Allow left side to scale proportionally */
+  }
+
+  .productdisplay-img-list img {
+    height: 80px; /* Smaller image thumbnails */
+  }
+
+  .productdisplay-main-img {
+    width: 300px; /* Scale down main image */
+    height: 350px;
+  }
+
+  .productdisplay-right {
+    margin: 0 20px; /* Adjust margin for smaller width */
+    flex: 1; /* Allow right side to scale proportionally */
+  }
+
+  .productdisplay-right h1 {
+    font-size: 18px; /* Slightly smaller title */
+  }
+
+  .productdisplay-right-stars {
+    font-size: 12px;
+  }
+
+  .productdisplay-right-prices {
+    font-size: 16px; /* Reduce font size for prices */
+  }
+
+  .productdisplay-right-description {
+    font-size: 14px; /* Reduce font size for description */
+  }
+
+  .productdisplay-right-size h1 {
+    font-size: 12px;
+  }
+
+  .productdisplay-right-sizes div {
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 12px; /* Reduce size text */
+  }
+
+  .button-green {
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .button-pink {
+    font-size: 12px;
+    padding: 8px 16px;
+    width: 150px; /* Adjust button width */
+  }
+
+  .button-wishlist {
+    font-size: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+
+  .quantity-controls button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .quantity-display {
+    font-size: 14px;
+    padding: 4px 8px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For phones */
+  .productDisplay {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px;
+  }
+
+  .productdisplay-left,
+  .productdisplay-right {
+    width: 90%; /* Take full width */
+  }
+
+  .productdisplay-img-list {
+    flex-direction: row; /* Display images in a row */
+    gap: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+
+  .productdisplay-main-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .productdisplay-right {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .productdisplay-right h1 {
+    font-size: 16px;
+  }
+
+  .productdisplay-right-stars {
+    font-size: 12px;
+  }
+
+  .productdisplay-right-prices {
+    font-size: 16px;
+  }
+
+  .productdisplay-right-description {
+    font-size: 14px;
+  }
+  .productdisplay-right-size h1 {
+    font-size: 8px;
+  }
+
+  .productdisplay-right-sizes div {
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 8px; /* Reduce size text */
+  }
+
+  .quantity-controls button {
+    font-size: 14px;
+    padding: 3px 8px;
+  }
+
+  .quantity-display {
+    font-size: 14px;
+    width: 30px;
+  }
+
+  .button-pink {
+    font-size: 12px;
+    width: 150px; /* Adjust width for buttons */
+    padding: 8px 15px;
+  }
+
+  .button-wishlist {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}

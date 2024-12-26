@@ -1,0 +1,31 @@
+/* Sidebar on larger screens */
+/* @media (min-width: 992px) { */
+@media (max-width: 991.98px) {
+  #layoutSidenav_nav {
+    width: 250px;
+    background-color: #343a40; /* Ensure the background color is consistent */
+    color: #ffffff; /* Text color for larger screens */
+  }
+
+  #layoutSidenav_content {
+    margin-left: 250px;
+  }
+
+  .sb-sidenav {
+    height: calc(100vh - 56px); /* Adjust for the navbar height */
+    overflow-y: auto;
+    color: #ffffff; /* Text color */
+  }
+
+  .sb-sidenav .nav-link {
+    color: #ffffff; /* Make sure the links are visible */
+  }
+
+  .sb-sidenav .sb-nav-link-icon i {
+    color: #ffffff; /* Ensure icons are visible */
+  }
+
+  .sb-sidenav .sb-sidenav-menu-heading {
+    color: #dddddd; /* Slightly lighter color for headings */
+  }
+}

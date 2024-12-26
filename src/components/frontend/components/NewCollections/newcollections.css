@@ -1,0 +1,73 @@
+.new-collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+.new-collections h1 {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.new-collections hr {
+  width: 200px;
+  height: 6px;
+  border-radius: 10px;
+  background: #252525;
+}
+
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 items per row */
+  margin-top: 10px;
+  gap: 30px;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .new-collections h1 {
+    font-size: 36px; /* Reduce heading size */
+  }
+
+  .new-collections hr {
+    width: 150px;
+    height: 5px;
+  }
+
+  .collections {
+    grid-template-columns: repeat(3, 1fr); /* Show 3 items per row */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-collections h1 {
+    font-size: 24px; /* Further reduce heading size */
+  }
+
+  .new-collections hr {
+    width: 100px;
+    height: 4px;
+  }
+
+  .collections {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 items per row */
+    gap: 15px;
+  }
+}

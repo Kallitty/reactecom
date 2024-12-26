@@ -1,0 +1,83 @@
+.breadcrum {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 8px;
+  color: #5e5e5e;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 60px 170px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.breadcrum img {
+  width: 12px; /* Adjust arrow icon size for consistency */
+  height: 12px;
+}
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Tablet: Reduce font size and adjust margin */
+@media (max-width: 1024px) {
+  .breadcrum {
+    font-size: 14px; /* Slightly smaller text for tablets */
+    margin: 30px 50px; /* Reduce side margins */
+    gap: 5px; /* Reduce gap between elements */
+  }
+
+  .breadcrum img {
+    width: 10px; /* Smaller arrow for tablets */
+    height: 10px;
+  }
+}
+
+/* Mobile: Ensure proper wrapping and spacing */
+@media (max-width: 480px) {
+  .breadcrum {
+    font-size: 12px; /* Smaller text for mobile */
+    margin: 20px 20px; /* Minimal margins for small screens */
+    gap: 5px;
+  }
+
+  .breadcrum img {
+    width: 8px; /* Adjust arrow size for mobile */
+    height: 8px;
+  }
+}
+
+/* .breadcrum {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5e5e5e;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 60px 170px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+/* display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; */
+/* } */

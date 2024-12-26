@@ -1,0 +1,70 @@
+.descriptionBox {
+  margin: 20px 170px;
+}
+
+.descriptionBox-navigator {
+  display: flex;
+}
+
+.descriptionBox-nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 171px;
+  height: 70px;
+  border: 1px solid #d0d0d0;
+}
+
+.descriptionBox-nav-box.fade {
+  background: #fbfbfb;
+  color: #555;
+}
+
+.descriptionBox-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border: 1px solid #d0d0d0;
+  padding: 48px;
+  padding-bottom: 70px;
+}
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@media (max-width: 480px) {
+  .descriptionBox {
+    margin: 20px 20px;
+  }
+
+  .descriptionBox-navigator {
+    flex-direction: column; /* Stack navigation boxes vertically */
+  }
+
+  .descriptionBox-nav-box {
+    width: 100%;
+    height: 30px;
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .descriptionBox-description {
+    margin-top: -30px;
+    padding: 20px;
+    gap: 15spx;
+  }
+
+  .descriptionBox-description p {
+    font-size: 14px; /* Smaller font size for readability */
+  }
+}
