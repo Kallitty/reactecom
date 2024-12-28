@@ -72,7 +72,7 @@ function ViewProduct() {
           item.images.map((img, index) => (
             <img
               key={index}
-              src={`http://localhost:8000/${img.image_path}`}
+              src={`${process.env.REACT_APP_API_BASE_URL}/${img.image_path}`}
               width='50px'
               alt={item.name}
               onError={(e) => {
@@ -248,7 +248,7 @@ export default ViewProduct
 //           <td>{item.original_price}</td>
 //           <td>
 //             <img
-//               src={`http://localhost:8000/${item.image}`}
+//               src={`${process.env.REACT_APP_API_BASE_URL}/${item.image}`}
 //               width='50px'
 //               alt={item.name}
 //             />

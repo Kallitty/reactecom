@@ -47,7 +47,7 @@ function ViewCategory() {
                 <Link className='nav-link' to={`/collections/${item.slug}`}>
                   {/* Set the image path */}
                   <img
-                    src={`http://localhost:8000/uploads/categories/${item.image}`}
+                    src={`${process.env.REACT_APP_API_BASE_URL}/uploads/categories/${item.image}`}
                     className='w-100'
                     alt={item.name}
                     style={{ height: '250px', objectFit: 'cover' }}

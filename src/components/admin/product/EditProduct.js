@@ -461,8 +461,8 @@ function EditProduct() {
                       existingImages.map((image) => (
                         <div className='col-md-3' key={image.id}>
                           <img
-                            src={`http://localhost:8000/${image.image_path}`}
-                            // http://localhost:8000/${img.image_path}
+                            src={`${process.env.REACT_APP_API_BASE_URL}/${image.image_path}`}
+                            // ${process.env.REACT_APP_API_BASE_URL}/${img.image_path}
 
                             alt='Existing image'
                             style={{

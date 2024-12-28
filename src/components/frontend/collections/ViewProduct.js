@@ -68,8 +68,8 @@ function ViewProduct() {
       // Get the first image or a placeholder if no images available
       const firstImage =
         productItem.images && productItem.images.length > 0
-          ? `http://localhost:8000/${productItem.images[0].image_path}`
-          : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+          ? `${process.env.REACT_APP_API_BASE_URL}/${productItem.images[0].image_path}`
+          : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_image/default-image.jpg`
 
       return (
         <div

@@ -107,8 +107,8 @@ function ProductDetail(props) {
   // Get the current image to display
   const currentImage =
     product.images && product.images.length > 0
-      ? `http://localhost:8000/${product.images[0].image_path}`
-      : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+      ? `${process.env.REACT_APP_API_BASE_URL}/${product.images[0].image_path}`
+      : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_image/default-image.jpg`
 
   return (
     <div>
