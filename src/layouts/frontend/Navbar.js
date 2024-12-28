@@ -18,7 +18,7 @@ function Navbar() {
 
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`/all-category`)
+        const response = await axios.get(`/api/all-category`)
         if (response.data && Array.isArray(response.data.category)) {
           const filteredCategories = response.data.category.filter(
             (category) => category.navdisplay === 0
@@ -38,7 +38,7 @@ function Navbar() {
 
   const logoutSubmit = (e) => {
     e.preventDefault()
-    axios.post(`s/logout`).then((res) => {
+    axios.post(`/api/logout`).then((res) => {
       if (res.data.status === 200) {
         localStorage.removeItem('auth_token')
         localStorage.removeItem('auth_username')

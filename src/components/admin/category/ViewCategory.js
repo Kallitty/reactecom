@@ -12,7 +12,7 @@ function ViewCategory() {
 
   useEffect(() => {
     axios
-      .get('/view-category')
+      .get('/api/view-category')
       .then((res) => {
         if (res.data.status === 200) {
           setCategoryList(res.data.category)
@@ -35,7 +35,7 @@ function ViewCategory() {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.delete(`/delete-category/${id}`)
+          await axios.delete(`/api/delete-category/${id}`)
           // Filter out the deleted category from the state
           setCategoryList(categoryList.filter((category) => category.id !== id))
           swal('Poof! Your data has been deleted!', {

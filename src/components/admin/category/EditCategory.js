@@ -27,7 +27,7 @@ function EditCategory() {
   useEffect(() => {
     document.title = 'Edit Category'
     axios
-      .get(`/edit-category/${id}`)
+      .get(`/api/edit-category/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
           setCategory({
@@ -86,11 +86,15 @@ function EditCategory() {
     }
 
     try {
-      const response = await axios.post(`/update-category/${id}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
+      const response = await axios.post(
+        `/api/update-category/${id}`,
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      )
 
       console.log('Response data:', response.data)
       setCategory({

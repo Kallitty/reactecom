@@ -30,7 +30,7 @@ function Dashboard() {
 
   useEffect(() => {
     // Fetch dashboard data
-    axios.get('/dashboard').then((res) => {
+    axios.get('/api/dashboard').then((res) => {
       if (res.status === 200) {
         setDashboardData(res.data)
       }

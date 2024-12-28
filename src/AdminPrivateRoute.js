@@ -14,10 +14,10 @@ function AdminPrivateRoute({ children }) {
   useEffect(() => {
     const checkAuthAndRole = async () => {
       try {
-        const res = await axios.get('/checkingAuthenticated')
+        const res = await axios.get('/api/checkingAuthenticated')
         if (res.data.status === 200) {
           setIsAuthenticated(true)
-          const userRes = await axios.get('/user')
+          const userRes = await axios.get('/api/user')
           if (userRes.data.role_as === 1) {
             // Assuming '1' indicates an admin role
             setIsAdmin(true)

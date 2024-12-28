@@ -12,7 +12,7 @@
 //   useEffect(() => {
 //     let isMounted = true
 //     document.title = 'View Product'
-//     axios.get(`/view-product`).then((res) => {
+//     axios.get(`/api/view-product`).then((res) => {
 //       if (isMounted) {
 //         if (res.data.status === 200) {
 //           setProduct(res.data.products)
@@ -29,7 +29,7 @@
 
 //     const thisClicked = e.currentTarget
 //     thisClicked.innerText = 'Deleting'
-//     axios.delete(`/delete-product/${id}`).then((res) => {
+//     axios.delete(`/api/delete-product/${id}`).then((res) => {
 //       if (res.data.status === 200) {
 //         swal('Success', res.data.message, 'success')
 //         thisClicked.closest('tr').remove()

@@ -52,7 +52,7 @@ function AddProduct() {
   useEffect(() => {
     document.title = 'Add Product'
 
-    axios.get('/all-category').then((res) => {
+    axios.get('/api/all-category').then((res) => {
       if (res.data.status === 200) {
         setCategoryList(res.data.category)
       }
@@ -83,7 +83,7 @@ function AddProduct() {
     formData.append('status', productInput.status ? 1 : 0)
 
     axios
-      .post('/store-product', formData, {
+      .post('/api/store-product', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

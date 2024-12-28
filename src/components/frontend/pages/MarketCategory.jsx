@@ -15,7 +15,7 @@ const MarketCategory = (props) => {
     const fetchProducts = async () => {
       setLoading(true)
       try {
-        const response = await axios.get(`/products/${props.category}`)
+        const response = await axios.get(`/api/products/${props.category}`)
         setProducts(response.data)
       } catch (error) {
         console.error('Error fetching products:', error)
@@ -46,8 +46,8 @@ const MarketCategory = (props) => {
         {products.map((item, i) => {
           const firstImage =
             item.images && item.images.length > 0
-              ? `http://localhost:8000/${item.images[0].image_path}`
-              : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+              ? `${process.env.REACT_APP_API_BASE_URL}/${item.images[0].image_path}`
+              : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_image/default-image.jpg`
 
           return (
             <Item

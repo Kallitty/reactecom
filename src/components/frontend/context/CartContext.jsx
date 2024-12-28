@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
 
   const fetchCartData = async () => {
     try {
-      const res = await axios.get('/cart')
+      const res = await axios.get('/api/cart')
       if (res.data.status === 200) {
         setCartCount(res.data.cart.length)
       }
@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = async (product_id, product_qty) => {
     try {
-      const response = await axios.post('/add-to-cart', {
+      const response = await axios.post('/api/add-to-cart', {
         product_id,
         product_qty,
       })

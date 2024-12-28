@@ -14,7 +14,7 @@ function Profile() {
     document.title = 'Profiles'
 
     axios
-      .get('/users')
+      .get('/api/users')
       .then((res) => {
         if (isMounted && res.data.users) {
           setUsers(res.data.users)
@@ -46,7 +46,7 @@ function Profile() {
     }).then((willBlock) => {
       if (willBlock) {
         axios
-          .post(`/users/${id}/block`)
+          .post(`/api/users/${id}/block`)
           .then((res) => {
             swal('Success', res.data.message, 'success')
             setUsers(

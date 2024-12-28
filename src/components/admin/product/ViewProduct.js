@@ -12,7 +12,7 @@ function ViewProduct() {
   useEffect(() => {
     document.title = 'View Products'
 
-    axios.get('/view-product').then((res) => {
+    axios.get('/api/view-product').then((res) => {
       if (res.data.status === 200) {
         setProduct(res.data.products)
         setLoading(false)
@@ -205,7 +205,7 @@ export default ViewProduct
 //   useEffect(() => {
 //     document.title = 'View Product'
 
-//     axios.get('/view-product').then((res) => {
+//     axios.get('/api/view-product').then((res) => {
 //       if (res.data.status === 200) {
 //         setProduct(res.data.products)
 //         setLoading(false)

@@ -34,7 +34,7 @@ function EditProduct() {
     document.title = 'Edit Product'
 
     // Fetch categories
-    axios.get('/all-category').then((res) => {
+    axios.get('/api/all-category').then((res) => {
       if (res.data.status === 200) {
         setCategoryList(res.data.category)
       }
@@ -42,7 +42,7 @@ function EditProduct() {
 
     // Fetch product details for editing
     if (id) {
-      axios.get(`/edit-product/${id}`).then((res) => {
+      axios.get(`/api/edit-product/${id}`).then((res) => {
         if (res.data.status === 200) {
           setProduct(res.data.product)
           setExistingImages(res.data.product.images) // Load existing images
@@ -79,7 +79,7 @@ function EditProduct() {
 
   const deleteExistingImage = (imageId) => {
     // Remove existing image from database
-    axios.delete(`/delete-product-image/${imageId}`).then((res) => {
+    axios.delete(`/api/delete-product-image/${imageId}`).then((res) => {
       if (res.data.status === 200) {
         // swal('Success', res.data.message, 'success')
         setExistingImages(
@@ -115,7 +115,7 @@ function EditProduct() {
     formData.append('status', productInput.status ? 1 : 0)
 
     axios
-      .post(`/update-product/${id}`, formData, {
+      .post(`/api/update-product/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -569,14 +569,14 @@ export default EditProduct
 //   useEffect(() => {
 //     document.title = 'Edit Product'
 
-//     axios.get('/all-category').then((res) => {
+//     axios.get('/api/all-category').then((res) => {
 //       if (res.data.status === 200) {
 //         setCategoryList(res.data.category)
 //       }
 //     })
 
 //     if (id) {
-//       axios.get(`/edit-product/${id}`).then((res) => {
+//       axios.get(`/api/edit-product/${id}`).then((res) => {
 //         if (res.data.status === 200) {
 //           console.log(res.data)
 //           setProduct(res.data.product)
@@ -613,7 +613,7 @@ export default EditProduct
 //     formData.append('status', productInput.status ? 1 : 0)
 
 //     axios
-//       .post(`/update-product/${id}`, formData, {
+//       .post(`/api/update-product/${id}`, formData, {
 //         headers: {
 //           'Content-Type': 'multipart/form-data',
 //         },

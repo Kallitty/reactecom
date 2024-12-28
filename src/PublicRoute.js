@@ -14,7 +14,7 @@ function PublicRoute() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`/all-category`) // Adjust API endpoint as needed
+        const response = await axios.get(`/api/all-category`) // Adjust API endpoint as needed
         setCategories(response.data.category)
       } catch (error) {
         console.error('Error fetching categories:', error)

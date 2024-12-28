@@ -17,7 +17,7 @@ function ViewProduct() {
     let isMounted = true
 
     axios
-      .get(`/fetchproducts/${slug}`)
+      .get(`/api/fetchproducts/${slug}`)
       .then((res) => {
         if (isMounted) {
           if (res.data.status === 200) {

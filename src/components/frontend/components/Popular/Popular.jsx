@@ -8,7 +8,7 @@ const Popular = () => {
 
   useEffect(() => {
     axios
-      .get('/popular-products')
+      .get('/api/popular-products')
       .then((res) => {
         if (res.data.status === 200) {
           setPopularProducts(res.data.popularProducts)
@@ -33,8 +33,8 @@ const Popular = () => {
             original_price={product.original_price}
             image={
               product.product_images && product.product_images.length > 0
-                ? `http://localhost:8000/${product.product_images[0].image_path}`
-                : 'http://localhost:8000/uploads/product_images/default-image.jpg'
+                ? `${process.env.REACT_APP_API_BASE_URL}/${product.product_images[0].image_path}`
+                : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_images/default-image.jpg`
             }
           />
         ))}

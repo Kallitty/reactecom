@@ -51,7 +51,7 @@ function Category() {
     formData.append('image', categoryInput.image) // Append the image
 
     axios
-      .post(`/store-category`, formData, {
+      .post(`/api/store-category`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set content type for file upload
         },
@@ -330,7 +330,7 @@ export default Category
 //       meta_descrip: categoryInput.meta_descrip,
 //     }
 
-//     axios.post(`/store-category`, data).then((res) => {
+//     axios.post(`/api/store-category`, data).then((res) => {
 //       if (res.data.status === 200) {
 //         document.getElementById('CATEGORY_FORM').reset()
 //         swal('Success.', res.data.message, 'success')

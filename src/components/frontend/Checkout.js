@@ -44,7 +44,7 @@ function Checkout() {
   useEffect(() => {
     let isMountered = true
 
-    axios.get(`/cart`).then((res) => {
+    axios.get(`/api/cart`).then((res) => {
       if (isMountered) {
         if (res.data.status === 200) {
           setCart(res.data.cart)
@@ -121,7 +121,7 @@ function Checkout() {
           payment_id: reference,
         }
 
-        axios.post('/place-order', paymentData).then((res) => {
+        axios.post('/api/place-order', paymentData).then((res) => {
           if (res.data.status === 200) {
             swal('Order Placed Successfully', '', 'success')
             setError([])
@@ -146,7 +146,7 @@ function Checkout() {
       // return actions.order.capture()
       return actions.order.capture().then(function (details) {
         orderinfo_data.payment_id = details.id
-        axios.post(`/place-order`, orderinfo_data).then((res) => {
+        axios.post(`/api/place-order`, orderinfo_data).then((res) => {
           if (res.data.status === 200) {
             swal('Order Placed Successfully', '', 'success')
             setError([])
@@ -178,7 +178,7 @@ function Checkout() {
 
     switch (payment_mode) {
       case 'cod':
-        axios.post(`/place-order`, data).then((res) => {
+        axios.post(`/api/place-order`, data).then((res) => {
           if (res.data.status === 200) {
             swal('Order Placed Successfully', '', 'success')
             setError([])
@@ -190,7 +190,7 @@ function Checkout() {
         })
         break
       case 'payonline':
-        axios.post(`/validate-order`, data).then((res) => {
+        axios.post(`/api/validate-order`, data).then((res) => {
           if (res.data.status === 200) {
             // swal('Order Placed Successfully', '', 'success')
             setError([])
@@ -208,7 +208,7 @@ function Checkout() {
         break
 
       case 'paystack':
-        axios.post(`/validate-order`, data).then((res) => {
+        axios.post(`/api/validate-order`, data).then((res) => {
           if (res.data.status === 200) {
             // swal('Order Placed Successfully', '', 'success')
             setError([])

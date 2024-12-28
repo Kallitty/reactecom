@@ -32,7 +32,7 @@ function PasswordReset() {
 
     axios.get('/sanctum/csrf-cookie').then((response) => {
       axios
-        .post('http://localhost:8000/api/password/reset', data)
+        .post('/api/password/reset', data)
         .then((res) => {
           if (res.status === 200) {
             swal('Success', res.data.message, 'success')

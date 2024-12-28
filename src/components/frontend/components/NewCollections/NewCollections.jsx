@@ -10,7 +10,7 @@ const NewCollections = () => {
 
   useEffect(() => {
     axios
-      .get('/new-collections')
+      .get('/api/new-collections')
       .then((res) => {
         if (res.data.status === 200) {
           setNewCollections(res.data.newCollections)

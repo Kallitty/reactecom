@@ -21,7 +21,7 @@ function ProductDetail(props) {
     let isMounted = true
 
     axios
-      .get(`/viewproductdetail/${category_slug}/${product_slug}`)
+      .get(`/api/viewproductdetail/${category_slug}/${product_slug}`)
       .then((res) => {
         if (isMounted) {
           if (res.data.status === 200) {
@@ -76,7 +76,7 @@ function ProductDetail(props) {
       product_id: product.id,
       product_qty: quantity,
     }
-    axios.post(`/add-to-cart`, data).then((res) => {
+    axios.post(`/api/add-to-cart`, data).then((res) => {
       if (res.data.status === 201) {
         swal('Success', res.data.message, 'success')
       } else if (res.data.status === 409) {

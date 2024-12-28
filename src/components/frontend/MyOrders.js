@@ -49,7 +49,7 @@ function MyOrder() {
 
   useEffect(() => {
     let isMountered = true
-    axios.get(`/orders`).then((res) => {
+    axios.get(`/api/orders`).then((res) => {
       if (isMountered) {
         if (res.data.status === 200) {
           setOrders(res.data.orders)

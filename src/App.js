@@ -1,5 +1,6 @@
 import React from 'react'
 // import './publicroute.css'
+import ReactDOM from 'react-dom/client'
 import {
   BrowserRouter as Router,
   Routes,

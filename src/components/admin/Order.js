@@ -13,7 +13,7 @@ function Order() {
   useEffect(() => {
     let isMounted = true
     document.title = 'Orders'
-    axios.get(`/admin/orders`).then((res) => {
+    axios.get(`/api/admin/orders`).then((res) => {
       if (isMounted) {
         if (res.data.status === 200) {
           setOrders(res.data.orders)

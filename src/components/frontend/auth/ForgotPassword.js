@@ -16,7 +16,7 @@ const ForgotPassword = () => {
 
     axios.get('/sanctum/csrf-cookie').then(() => {
       axios
-        .post('http://localhost:8000/api/password/email', { email })
+        .post('/api/password/email', { email })
         .then((response) => {
           swal('Success', response.data.message, 'success')
           setLoading(false)

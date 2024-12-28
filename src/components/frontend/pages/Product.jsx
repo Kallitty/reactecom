@@ -17,7 +17,7 @@ const Product = () => {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const response = await axios.get(`/product/${productId}`)
+        const response = await axios.get(`/api/product/${productId}`)
         console.log('API Response:', response.data) // Log the full API response
 
         if (response.data.status === 200) {

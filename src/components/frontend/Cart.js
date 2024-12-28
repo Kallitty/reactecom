@@ -52,7 +52,7 @@ function Cart() {
   useEffect(() => {
     let isMountered = true
 
-    axios.get(`/cart`).then((res) => {
+    axios.get(`/api/cart`).then((res) => {
       if (isMountered) {
         if (res.data.status === 200) {
           setCart(res.data.cart)
@@ -95,7 +95,7 @@ function Cart() {
     updateCartQuantity(cart_id, 'inc')
   }
   function updateCartQuantity(cart_id, scope) {
-    axios.put(`/cart-updatequntity/${cart_id}/${scope}`).then((res) => {
+    axios.put(`/api/cart-updatequntity/${cart_id}/${scope}`).then((res) => {
       if (res.data.status === 200) {
         // swal("Success", res.data.message, "success");
         window.dispatchEvent(new Event('cartUpdated'))
@@ -106,7 +106,7 @@ function Cart() {
     e.preventDefault()
     const thisClicked = e.currentTarget
     thisClicked.innerText = 'Removing'
-    axios.delete(`/delete-cartitem/${cart_id}`).then((res) => {
+    axios.delete(`/api/delete-cartitem/${cart_id}`).then((res) => {
       if (res.data.status === 200) {
         // swal("Succes", res.data.message, "success");
         thisClicked.closest('tr').remove()
@@ -160,11 +160,17 @@ function Cart() {
 
                     // Get the first image or a placeholder if no images are available
 
+                    // const firstImage =
+                    //   item.product.product_images &&
+                    //   item.product.product_images.length > 0
+                    //     ? `http://localhost:8000/${item.product.product_images[0].image_path}`
+                    //     : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+
                     const firstImage =
                       item.product.product_images &&
                       item.product.product_images.length > 0
-                        ? `http://localhost:8000/${item.product.product_images[0].image_path}`
-                        : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+                        ? `${process.env.REACT_APP_API_BASE_URL}/${item.product.product_images[0].image_path}`
+                        : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_image/default-image.jpg`
 
                     return (
                       <tr key={idx}>

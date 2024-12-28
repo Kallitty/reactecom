@@ -24,7 +24,7 @@ const ProductDisplay = ({ productId }) => {
   useEffect(() => {
     if (productId) {
       axios
-        .get(`/product/${productId}`)
+        .get(`/api/product/${productId}`)
         .then((res) => {
           console.log('API Response:', res.data)
           if (res.data.status === 200) {
@@ -49,8 +49,8 @@ const ProductDisplay = ({ productId }) => {
   // Set the main image or default image
   const mainImage =
     product?.product_images && product.product_images.length > 0
-      ? `http://localhost:8000/${product.product_images[0].image_path}`
-      : 'http://localhost:8000/uploads/product_image/default-image.jpg'
+      ? `${process.env.REACT_APP_API_BASE_URL}/${product.product_images[0].image_path}`
+      : `${process.env.REACT_APP_API_BASE_URL}/uploads/product_image/default-image.jpg`
 
   console.log('Main image URL:', mainImage) // Log main image URL for verification
 
@@ -86,7 +86,7 @@ const ProductDisplay = ({ productId }) => {
       product_qty: quantity,
     }
 
-    axios.post(`/add-to-cart`, data).then((res) => {
+    axios.post(`/api/add-to-cart`, data).then((res) => {
       if (res.data.status === 201) {
         addToCart(product.id, quantity)
         swal('Success', res.data.message, 'success')
@@ -118,7 +118,7 @@ const ProductDisplay = ({ productId }) => {
               .map((img, index) => (
                 <img
                   key={index}
-                  src={`http://localhost:8000/${img.image_path}`}
+                  src={`${process.env.REACT_APP_API_BASE_URL}/${img.image_path}`}
                   alt={`Product variant ${index + 1}`}
                   className='productdisplay-side-img'
                 />

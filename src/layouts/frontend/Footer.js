@@ -17,7 +17,7 @@
 //   const [setting, setSetting] = useState([])
 
 //   useEffect(() => {
-//     axios.get('/view-setting').then((res) => {
+//     axios.get('/api/view-setting').then((res) => {
 //       if (res.data.status === 200) {
 //         setSetting(res.data.setting)
 
