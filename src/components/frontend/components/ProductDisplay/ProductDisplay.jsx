@@ -22,6 +22,8 @@ const ProductDisplay = ({ productId }) => {
     product?.original_price?.toLocaleString() || '0'
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     if (productId) {
       axios
         .get(`/api/product/${productId}`)

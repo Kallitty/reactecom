@@ -332,7 +332,7 @@ function EditCategory() {
                         typeof imagePreview === 'string' &&
                         imagePreview.startsWith('blob:')
                           ? imagePreview // This is a new uploaded image
-                          : `http://localhost:8000/uploads/categories/${imagePreview}`
+                          : `${process.env.REACT_APP_API_BASE_URL}/uploads/categories/${imagePreview}`
                       } // This is the existing image from the server
                       alt='Category'
                       style={{ height: '100px', marginTop: '10px' }}
