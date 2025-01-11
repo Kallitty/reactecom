@@ -203,7 +203,7 @@
 
     /* overflow-y: auto; */
     transition: transform 0.3s ease-in-out;
-    z-index: 99;
+    z-index: 9;
   }
   .nav_menu.active {
     /* transform: translateY(0); */
@@ -287,7 +287,7 @@
   .nav_menu {
     flex-direction: column;
     gap: 15px;
-    width: 100%;
+    /* width: 100%; */
     align-items: flex-start;
   }
   .nav_menu.active {
