@@ -155,16 +155,15 @@
 /* Responsive Styles */
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
-  .menu {
-    display: none; /* Hide the menu */
+  .nav_menu {
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
-    background-color: white; /* Ensure it's visible when displayed */
+    background-color: white;
     width: 100%;
-    z-index: 10; /* Ensure it overlaps content */
+    z-index: 10;
   }
-
   .menu_icon {
     display: block; /* Show the menu icon */
     position: absolute;
